@@ -121,7 +121,7 @@ void JpegBuilder::insertExifToJpeg(unsigned char *jpeg,
     ResetJpgfile();
     if (ReadJpegSectionsFromBuffer(jpeg, jpeg_size, read_mode)) {
         jpeg_opened = true;
-        create_EXIF(table, exif_tag_count, gps_tag_count, has_datetime_tag);
+        //create_EXIF(table, exif_tag_count, gps_tag_count, has_datetime_tag);
     }
 }
 

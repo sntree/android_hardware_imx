@@ -17,7 +17,8 @@
 
 
 #include "PhysMemAdapter.h"
-#include <ion/ion.h>
+//#include <ion/ion.h>
+#include "ion.h"
 
 PhysMemAdapter::PhysMemAdapter()
     : mIonFd(-1), mFrameWidth(0), mFrameHeight(0),

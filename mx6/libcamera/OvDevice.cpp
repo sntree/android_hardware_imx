@@ -197,6 +197,14 @@ status_t OvDevice::initParameters(CameraParameters& params,
         if (ret == 0) {
             FLOG_RUNTIME("enum frame size w:%d, h:%d",
                          vid_frmsize.discrete.width, vid_frmsize.discrete.height);
+
+            // 1024x768 is not supported
+            if (vid_frmsize.discrete.width == 1024) {
+                FLOG_RUNTIME("frame size w:%d, h:%d is not supported, skip",
+                         vid_frmsize.discrete.width, vid_frmsize.discrete.height);            
+                continue;
+            }
+
             memset(&vid_frmval, 0, sizeof(struct v4l2_frmivalenum));
             vid_frmval.index        = 0;
             vid_frmval.pixel_format = vid_frmsize.pixel_format;

@@ -6,7 +6,14 @@
 
 #define LOG_TAG "NV12_resize"
 #define STRIDE 4096
+
 #include <utils/Log.h>
+
+#define ALOGI LOGI
+#define ALOGW LOGW
+#define ALOGE LOGE
+#define ALOGV LOGV
+#define ALOG_ASSERT LOG_ASSERT
 
 /*==========================================================================
 * Function Name  : VT_resizeFrame_Video_opt2_lp

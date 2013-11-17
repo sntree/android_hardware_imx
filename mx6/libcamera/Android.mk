@@ -14,6 +14,7 @@
 
 ifeq ($(BOARD_SOC_CLASS),IMX6)
 LOCAL_PATH:= $(call my-dir)
+BOARD_HAVE_IMX_CAMERA=true
 
 ifeq ($(BOARD_HAVE_IMX_CAMERA),true)
 
@@ -35,7 +36,8 @@ LOCAL_SRC_FILES:=    \
     TVINDevice.cpp \
     PhysMemAdapter.cpp \
     YuvToJpegEncoder.cpp \
-    NV12_resize.c
+    NV12_resize.c \
+    ion.c
 
 LOCAL_CPPFLAGS +=
 
@@ -58,6 +60,7 @@ LOCAL_C_INCLUDES += \
 	frameworks/base/include/ui \
 	frameworks/base/camera/libcameraservice \
 	hardware/imx/mx6/libgralloc_wrapper \
+    hardware/imx \
 	external/jpeg \
 	external/jhead
 

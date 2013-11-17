@@ -51,6 +51,12 @@
 
 using namespace android;
 
+#define ALOGI LOGI
+#define ALOGW LOGW
+#define ALOGE LOGE
+#define ALOGV LOGV
+#define ALOG_ASSERT LOG_ASSERT
+
 #define CAMERA_HAL_DEBUG
 #ifdef CAMERA_HAL_DEBUG
 # define FLOG_RUNTIME(format, ...) ALOGI((format), ## __VA_ARGS__)
@@ -84,6 +90,10 @@ using namespace android;
 
 #define MAX_SENSOR_FORMAT 20
 #define FORMAT_STRING_LEN 64
+
+#ifndef GRALLOC_USAGE_FORCE_CONTIGUOUS
+#define GRALLOC_USAGE_FORCE_CONTIGUOUS 0
+#endif
 
 #define CAMERA_GRALLOC_USAGE GRALLOC_USAGE_HW_TEXTURE | \
     GRALLOC_USAGE_HW_RENDER |                           \
